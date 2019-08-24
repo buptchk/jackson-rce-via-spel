@@ -4,8 +4,7 @@
      http://www.springframework.org/schema/beans
      http://www.springframework.org/schema/beans/spring-beans.xsd
 ">
-  <bean id="pb" class="java.lang.ProcessBuilder">
-     <constructor-arg value="echo 2" />
-     <property name="whatever" value="#{ pb.start() }"/>
+  <bean id="pb" class="java.lang.ProcessBuilder" init-method="start">
+     <constructor-arg value="echo 2"/>
   </bean>
 </beans>
